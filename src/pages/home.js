@@ -9,6 +9,7 @@ export default function Home() {
       <ul>
         <li><a href="/map">Mapa</a></li>
         <li><a href="/login">Inicio de sesión</a></li>
+        <li><a href="/about">Acerca de:</a></li>
       </ul>
     </div>
   );
