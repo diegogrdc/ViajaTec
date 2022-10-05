@@ -1,7 +1,7 @@
 import './App.css';
-import LoginForm from "./components/loginform";
+import LoginForm from "./pages/loginform";
 import Home from "./pages/home";
-import Gmap from './Map';
+import Gmap from './pages/map';
 import FourOhFour from './pages/FourOhFour';
 import About from './pages/about';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';

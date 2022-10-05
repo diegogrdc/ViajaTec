@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import ReactDOM from "react-dom";
 import { useGoogleMap, useMap } from "../hooks/map_hook.js";
 const API_KEY = "AIzaSyBcKg0tiyLBZ4Rvk4PlZR_V64ndFZOHbfs";
 
