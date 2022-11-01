@@ -37,6 +37,9 @@ export default function Navbar() {
             <li>
               <a href="/map">Map</a>
             </li>
+            <li>
+              <a href="/rules">Rules</a>
+            </li>
           </ul>
         </div>
       </nav>
