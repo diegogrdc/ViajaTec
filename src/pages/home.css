@@ -1,0 +1,108 @@
+
+.content
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.content .textBox
+{
+    margin-top: 8%;
+    position: relative;
+    max-width: 50%;
+    margin-left: 5%;
+ 
+}
+
+.content .textBox h1
+{
+    color:rgb(0, 40, 104);
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox p
+{
+    font-weight: lighter;
+    color: #333;
+    
+}
+
+.content .textBox a
+{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    font-weight: 20;
+    color: #fff;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    
+}
+
+
+.content .imgBox 
+{
+   padding-top: 8%;
+   padding-left: 2%;
+    
+}
+
+.content .imgBox .camion
+{
+    width: 140%;
+    height: 150%;
+
+}
+
+.thumb
+{
+
+    position: absolute;
+    left: 50%;
+    bottom: 90px;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.thumb li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover
+{
+    transform: translateY(-15px);
+}
+
+.thumb li img
+{
+    max-width: 60px;
+}
+
+.circle
+{
+    background-color: rgb(0, 40, 104);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(600px at right 500px);
+}
+
+.header
+{
+    background-color: rgb(239, 239, 239);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 65px;
+}

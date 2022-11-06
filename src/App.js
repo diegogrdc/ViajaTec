@@ -10,8 +10,9 @@ import Navbar from './components/navigation/Navbar/navbar';
 import "./components/navigation/Navbar/navbar.css";
 
 function App() {
+
   return (
-    <div>
+    <div  >
       <Router>
         <Navbar></Navbar>
         <Routes>

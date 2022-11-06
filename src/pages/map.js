@@ -15,8 +15,8 @@ const initialConfig = {
 const Gmap = () => {
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <div style={{padding: "20px", width: "800px", height: "600px"}}>
+    <div style={{ display: "flex", flexDirection: "row"}}>
+      <div style={{padding: "20px", width: "900px", height: "600px", paddingLeft:"35px"}}>
         <iframe src="https://www.google.com/maps/d/embed?mid=1n_C1lCcAobnXuwPc-H9h3qoWQ3PcXls&ehbc=2E312F" width="100%" height="100%">
         </iframe>
       </div>
