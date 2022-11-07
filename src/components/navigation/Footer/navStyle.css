@@ -1,0 +1,15 @@
+.footer{
+    color: #fffbff !important;
+    background-color:rgb(0, 40, 104);
+    position:relative;
+    bottom: 0;
+    height: 2em;
+    left: 0;
+    position: relative;
+    font-size: small;
+    width:100%;
+}
+
+.Center{
+	text-align: center;
+}

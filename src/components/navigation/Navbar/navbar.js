@@ -1,5 +1,10 @@
 import React from "react";
 import "./navbar.css";
+import GoogleLogin from "react-google-login";
+
+const responseGoogle = (response) => {
+  console.log(response);
+}
 
 export default function Navbar() {
     return (
@@ -29,9 +34,6 @@ export default function Navbar() {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/login">Login</a>
-            </li>
-            <li>
               <a href="/about">About</a>
             </li>
             <li>
@@ -39,6 +41,15 @@ export default function Navbar() {
             </li>
             <li>
               <a href="/rules">Rules</a>
+            </li>
+            <li>
+            <GoogleLogin
+              clientId="937385898671-tfhhoqbhfn098182js64lseo6aoh7n1r.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
             </li>
           </ul>
         </div>

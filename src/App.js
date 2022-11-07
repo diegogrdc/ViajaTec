@@ -8,13 +8,14 @@ import Rules from './pages/rules';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/navigation/Navbar/navbar';
 import "./components/navigation/Navbar/navbar.css";
+import Footer from './components/navigation/Footer/footer';
 
 function App() {
 
   return (
     <div  >
+      <Navbar></Navbar>
       <Router>
-        <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home/>} exact/>
           <Route path='/map' element={<Gmap/>}/>
@@ -24,6 +25,7 @@ function App() {
           <Route path='*' element={<FourOhFour/>} />
         </Routes>
 		  </Router>
+      <Footer></Footer>
     </div>
   );
 }

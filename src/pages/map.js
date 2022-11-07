@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import RutaGarzaSada from '../assets/RutaGarzaSada.png'
@@ -26,23 +26,23 @@ const Gmap = () => {
         <div style={{width: "500px", height:"400px"}}>
         <Carousel>
               <div>
-                  <img src={RutaGarzaSada} />
+                  <img src={RutaGarzaSada} alt=":)"/>
                   <p className="legend">Ruta Garza Sada</p>
               </div>
               <div>
-                  <img src={RutaEscuelasYHospitales} />
+                  <img src={RutaEscuelasYHospitales} alt=":)"/>
                   <p className="legend">Ruta Escuelas Y Hospitales</p>
               </div>
               <div>
-                  <img src={RutaRevolucion} />
+                  <img src={RutaRevolucion} alt=":)"/>
                   <p className="legend">Ruta Revolucion</p>
               </div>
               <div>
-                  <img src={RutaValleAlto} />
+                  <img src={RutaValleAlto} alt=":)"/>
                   <p className="legend">Ruta Valle Alto</p>
               </div>
               <div>
-                  <img src={RutaNocturna} />
+                  <img src={RutaNocturna} alt=":)"/>
                   <p className="legend">Rutas Nocturnas</p>
               </div>
           </Carousel>

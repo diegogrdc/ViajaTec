@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 //import {Link} from "react-router-dom";
 import "./home.css"
 import azul from '../assets/azul.png'
@@ -31,9 +31,9 @@ export default function Home() {
           </div>  
         </div>
       <ul className="thumb">
-        <li><img src={azul}></img></li>
-        <li><img src={azul}></img></li>
-        <li><img src={azul}></img></li>
+        <li><img src={azul} alt=":)"></img></li>
+        <li><img src={azul} alt=":)"></img></li>
+        <li><img src={azul} alt=":)"></img></li>
       </ul>
 
     </div>
