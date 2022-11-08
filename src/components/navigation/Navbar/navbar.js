@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import GoogleLogin from "react-google-login";
+import logo from "/Users/juancgmz/Documents/GitHub/ViajaTec/src/assets/icons/legoTemp.png"
 
 const responseGoogle = (response) => {
   console.log(response);
@@ -9,9 +10,11 @@ const responseGoogle = (response) => {
 export default function Navbar() {
     return (
       <nav className="navigation">
-        <a href="/" className="brand-name">
-          ViajaTec
+        <a href="/" className="brand-name" id="myoutercontainer">
+          <img src={logo} alt="logo" width="50" height="50"></img>
+            <a id="myinnercontainer">ViajaTec</a>
         </a>
+
         <button className="hamburger">
           {/* icon from heroicons.com */}
           <svg

@@ -5,7 +5,7 @@
     min-height: 10vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(#0f4675, #0f4675 50%, #fff 50%, #fff 100%);
+    background: #0f4675;
     
 }
 

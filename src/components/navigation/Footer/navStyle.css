@@ -1,14 +1,7 @@
 .footer{
     color: #fffbff !important;
     background-color:#002868;
-    bottom: 0;
-    right: 0;
-    left: 0;
     width: 100%;
     position: absolute;
     text-align: center;
-}
-
-.footer-parent{
-    height: calc(100% - 60px);
 }

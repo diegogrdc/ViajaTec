@@ -74,3 +74,6 @@ body {
 .hamburger:hover {
     background-color: #2642af;
 }
+
+#myoutercontainer { position:relative }
+#myinnercontainer { position:absolute; top:50%; margin-top:-15px }
