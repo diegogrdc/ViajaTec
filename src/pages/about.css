@@ -29,3 +29,16 @@
     margin-left: 2%;
     margin-top: 4%;
 }
+
+.noBull{
+    list-style-type:none;
+    padding: 0px 50px;
+}
+
+.liSpace{
+    padding: 5px 0px;
+}
+
+.socialPar{
+    text-decoration:overline;
+}
