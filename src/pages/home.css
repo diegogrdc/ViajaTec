@@ -61,31 +61,28 @@
 
 .thumb
 {
-
     position: absolute;
     left: 50%;
-    bottom: 90px;
+    bottom: 150px;
     transform: translate(-50%);
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.thumb li
+.thumb button
 {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     cursor: pointer;
     transition: 0.5s;
+    
 }
 
-.thumb li:hover
+.thumb button:hover
 {
     transform: translateY(-15px);
-}
-
-.thumb li img
-{
-    max-width: 60px;
 }
 
 .circle
@@ -105,4 +102,71 @@
     height: 100%;
     position: absolute;
     top: 65px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    display: block;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: rgb(0, 40, 104);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+}
+
+.popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 5;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.openpopup{
+    visibility: visible;
+    top: 5;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.2);
+}
+
+.popup h3{
+    font-size: 25px;
+    margin: 30px 0 10px;
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgb(0, 40, 104);
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, 0.2);
 }
