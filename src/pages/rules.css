@@ -40,13 +40,3 @@
     padding: 100px 40px 60px;
     box-shadow: 0 15px 45px rgba(0,0,0,0.1);
 }
-
-.container2 .box:before{
-   content: '';
-   margin-top: 50px;
-   width: 200px;
-   height: auto;
-   background: #ff226d;
-   padding: 100px 40px 60px;
-   position: relative;
-}
