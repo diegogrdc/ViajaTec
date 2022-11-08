@@ -35,10 +35,12 @@ body {
 
 .navigation-menu {
     margin-left: auto;
+   
 }
 
 .navigation-menu ul {
     display: flex;
+    margin-top: 2%;
     padding: 0;
 }
 

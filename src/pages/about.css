@@ -1,0 +1,31 @@
+.body
+{
+    background: rgb(239, 239, 239);
+    width: 100%;
+    height: auto;
+}
+
+.body h2
+{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 32px;
+    color: rgb(0, 40, 104);;
+}
+
+
+.imgtxt{
+    display: flex;
+    flex-direction: row;
+}
+.camion2
+{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.texto
+{
+    margin-left: 2%;
+    margin-top: 4%;
+}

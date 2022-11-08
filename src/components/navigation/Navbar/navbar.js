@@ -31,16 +31,16 @@ export default function Navbar() {
           className="navigation-menu">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="/about">About</a>
+              <a href="/about">Contacto</a>
             </li>
             <li>
-              <a href="/map">Map</a>
+              <a href="/map">Rutas</a>
             </li>
             <li>
-              <a href="/rules">Rules</a>
+              <a href="/rules">Reglamento</a>
             </li>
             <li>
             <GoogleLogin
