@@ -15,7 +15,7 @@ function App() {
       <ResponsiveAppBar/>
       <Router>
         <Routes>
-          <Route path='/' element={<FourOhFour/>} exact/>
+          <Route path='/' element={<Home/>} exact/>
           <Route path='/map' element={<Gmap/>}/>
           <Route path='/login' element={<LoginForm/>}/>
           <Route path='/rules' element={<Rules/>}/>

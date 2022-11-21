@@ -11,9 +11,28 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import GoogleLogin from "react-google-login";
+import { useState, useEffect } from "react";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { gapi } from "gapi-script";
 
-const pages = ["Home", "Contact", "Rules", "Map"];
+const pages = [
+  {
+    name: "Inicio",
+    route: "/",
+  },
+  {
+    name: "Contacto",
+    route: "/about",
+  },
+  {
+    name: "Reglas",
+    route: "/rules",
+  },
+  {
+    name: "Mapa",
+    route: "/map",
+  },
+];
 const settings = ["Logout"];
 
 function ResponsiveAppBar() {
@@ -33,6 +52,31 @@ function ResponsiveAppBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const [profile, setProfile] = useState([]);
+  const clientId =
+    "386932037035-k8v833noqjk7m4auae0t83vnkrqvvg3t.apps.googleusercontent.com";
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: clientId,
+        scope: "",
+      });
+    };
+    gapi.load("client:auth2", initClient);
+  });
+
+  const onSuccess = (res) => {
+    setProfile(res.profileObj);
+  };
+
+  const onFailure = (err) => {
+    console.log("failed", err);
+  };
+
+  const logOut = () => {
+    setProfile(null);
   };
 
   return (
@@ -87,8 +131,10 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" href={page.route}>
+                    {page.name}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -97,7 +143,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -114,23 +160,17 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
+                href={page.route}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <GoogleLogin
-              clientId="937385898671-tfhhoqbhfn098182js64lseo6aoh7n1r.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={"single_host_origin"}
-            />
             <Tooltip title="User settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
