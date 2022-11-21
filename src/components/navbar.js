@@ -29,10 +29,6 @@ var pages = [
     name: "Reglas",
     route: "/rules",
   },
-  {
-    name: "Mapa",
-    route: "/map",
-  },
 ];
 
 const settings = ["Logout"];
@@ -180,9 +176,60 @@ function ResponsiveAppBar() {
                 {page.name}
               </Button>
             ))}
+            {profile ? (
+              <div>
+                <Button
+                  key="Mapa"
+                  href="/map"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  Mapa
+                </Button>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <div id="LogChido">
+            {profile ? (
+              <div id="UserPic">
+                <Tooltip title={profile.name}>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt="User Image" src={profile.imageUrl} />
+                  </IconButton>
+                </Tooltip>
+
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  {settings.map((setting) => (
+                    <MenuItem
+                      key={setting}
+                      onClick={() => {
+                        handleCloseUserMenu();
+                        logOut();
+                      }}
+                    >
+                      <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </div>
+            ) : (
               <GoogleLogin
                 clientId={clientId}
                 buttonText="Sign in with Google"
@@ -191,42 +238,7 @@ function ResponsiveAppBar() {
                 cookiePolicy={"single_host_origin"}
                 isSignedIn={true}
               />
-            </div>
-            <div id="UserPic">
-              <Tooltip title="User settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="User Image" src="" />
-                </IconButton>
-              </Tooltip>
-            </div>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem
-                  key={setting}
-                  onClick={() => {
-                    handleCloseUserMenu();
-                    logOut();
-                  }}
-                >
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            )}
           </Box>
         </Toolbar>
       </Container>
