@@ -7,6 +7,7 @@ import About from './pages/about';
 import Rules from './pages/rules';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ResponsiveAppBar from './components/navbar';
+import Footer from "./components/footer";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           <Route path='*' element={<FourOhFour/>} />
         </Routes>
 		  </Router>
-      
+      <Footer/>
     </div>
   );
 }
