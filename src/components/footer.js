@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="footer">
             <p className="footerText">
             &copy; {new Date().getFullYear()} Copyright:{" "}
-            <a href="/">
+            <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>
               {" "}
               ViajaTec{" "}
             </a>
