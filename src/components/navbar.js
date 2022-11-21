@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import GoogleLogin from "react-google-login";
 
 const pages = ["Home", "Contact", "Rules", "Map"];
 const settings = ["Logout"];
