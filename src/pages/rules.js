@@ -3,7 +3,7 @@ import "./rules.css"
 
 function Rules() {
   return (
-    <div className='container'>
+    <div className='containerA'>
       <br></br>
       <br></br>
       <h1>Recomendaciones Importantes</h1>

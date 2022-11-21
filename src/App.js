@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 import LoginForm from "./pages/loginform";
 import Home from "./pages/home";
 import Gmap from './pages/map';
@@ -6,18 +6,16 @@ import FourOhFour from './pages/FourOhFour';
 import About from './pages/about';
 import Rules from './pages/rules';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Navbar from './components/navigation/Navbar/navbar';
-import "./components/navigation/Navbar/navbar.css";
-import Footer from './components/navigation/Footer/footer';
+import ResponsiveAppBar from './components/navbar';
 
 function App() {
 
   return (
-    <div  >
-      <Navbar></Navbar>
+    <div>
+      <ResponsiveAppBar/>
       <Router>
         <Routes>
-          <Route path='/' element={<Home/>} exact/>
+          <Route path='/' element={<FourOhFour/>} exact/>
           <Route path='/map' element={<Gmap/>}/>
           <Route path='/login' element={<LoginForm/>}/>
           <Route path='/rules' element={<Rules/>}/>
@@ -25,7 +23,7 @@ function App() {
           <Route path='*' element={<FourOhFour/>} />
         </Routes>
 		  </Router>
-      <Footer></Footer>
+      
     </div>
   );
 }
