@@ -1,20 +1,20 @@
 import React from "react";
 import "./about.css"
 import camion from '../assets/camion.png'
-import email from '../assets/icons/email.png'
-import instagram from '../assets/icons/instagram.png'
-import location from '../assets/icons/location.png'
-import telefono from '../assets/icons/telefono.png'
-import whatsapp from '../assets/icons/whatsapp.png'
-import twitter from '../assets/icons/twitter-sign.png'
-import facebook from '../assets/icons/facebook.png'
+import email from '../assets/email.png'
+import instagram from '../assets/instagram.png'
+import location from '../assets/location.png'
+import telefono from '../assets/telefono.png'
+import whatsapp from '../assets/whatsapp.png'
+import twitter from '../assets/twitter-sign.png'
+import facebook from '../assets/facebook.png'
 
 export default function About() {
   return (
     <div className="body">
       <h2>Contáctanos</h2>
       <div className="imgtxt">
-          <img src={camion} className="camion2"></img>
+          <img src={camion} className="camion2" alt="Foto Camión"></img>
           <div className="texto">
             <p>Queremos que tu experiencia en el Tec sea extraordinaria. Resolvemos tus dudas y trámites en un solo lugar.</p>
             <div>
