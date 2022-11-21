@@ -14,8 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { useState, useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
+import "./navbar.css";
 
-const pages = [
+var pages = [
   {
     name: "Inicio",
     route: "/",
@@ -33,6 +34,7 @@ const pages = [
     route: "/map",
   },
 ];
+
 const settings = ["Logout"];
 
 function ResponsiveAppBar() {
@@ -56,7 +58,8 @@ function ResponsiveAppBar() {
 
   const [profile, setProfile] = useState([]);
   const clientId =
-    "386932037035-k8v833noqjk7m4auae0t83vnkrqvvg3t.apps.googleusercontent.com";
+    "937385898671-tfhhoqbhfn098182js64lseo6aoh7n1r.apps.googleusercontent.com";
+
   useEffect(() => {
     const initClient = () => {
       gapi.client.init({
@@ -78,6 +81,15 @@ function ResponsiveAppBar() {
   const logOut = () => {
     setProfile(null);
   };
+  /*
+  if(profile){
+    document.getElementById("LogChido").style.display = "none";
+    document.getElementById("UserPic").style.display = "inline";
+  }
+  else{
+    document.getElementById("UserPic").style.display = "none";
+    document.getElementById("LogChido").style.display = "inline";
+  }*/
 
   return (
     <AppBar position="static">
@@ -169,13 +181,24 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="User settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
+            <div id="LogChido">
+              <GoogleLogin
+                clientId={clientId}
+                buttonText="Sign in with Google"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={"single_host_origin"}
+                isSignedIn={true}
+              />
+            </div>
+            <div id="UserPic">
+              <Tooltip title="User settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="User Image" src="" />
+                </IconButton>
+              </Tooltip>
+            </div>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -193,7 +216,13 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem
+                  key={setting}
+                  onClick={() => {
+                    handleCloseUserMenu();
+                    logOut();
+                  }}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
